@@ -46,7 +46,7 @@ def page_not_found(e):
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
-    return render_template('main_menu.html')
+    return render_template('main_menu.html', current_time=datetime.utcnow())
 
 @app.route('/cursos', methods=['GET', 'POST'])
 def aluno():
@@ -74,4 +74,5 @@ def aluno():
                            courses=courses_list)
 
 if __name__ == "__main__":
+
     app.run(debug=True)
